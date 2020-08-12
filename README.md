@@ -1,57 +1,36 @@
-# Project Name
+# AKS Bootcamp - Demo Application
 
-(short, 1-3 sentenced, description of the project)
+This is a short sample code for the AKS Bootcamp
 
 ## Features
 
-This project framework provides the following features:
-
-* Feature 1
-* Feature 2
-* ...
+This project is a simple harbour control application to track ships. It consists on a front-end and a back-end part.
 
 ## Getting Started
 
 ### Prerequisites
 
-(ideally very short, if any)
+- Node.js version 8 or later
+- Docker and Docker Compose
+- MongoDB
 
-- OS
-- Library version
-- ...
+### Installation & Quickstart
 
-### Installation
+#### Running with Docker
 
-(ideally very short)
+Just type `docker-compose up` on the project root and it should start a working application.
 
-- npm install [package name]
-- mvn install
-- ...
+#### Running stand alone
 
-### Quickstart
-(Add steps to get up and running quickly)
+The application is divided into two main directories: `frontend` and `backend` each one with their respective codes and infrastructure files.
 
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
+__Front End__: Created using Vim. Just go into the directory, type `npm install` to install all dependencies and then `npm run serve`. You can also build the image from the Dockerfile in the same directory
 
+__Front End__: Created with TypeScript. Just go into the directory, type `npm install` to install all dependencies and then `npm run build:start` to run the app or `npm run start:debug` to start in debug mode (tsc watch and logging). You can also build the image from the Dockerfile in the same directory
 
-## Demo
+### Environment Variables
 
-A demo app is included to show how to use the project.
+The backend portion requires environment variables to run, those are:
 
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+- DATABASE_MONGODB_URI: URI of the MongoDB database
+- DATABASE_MONGODB_DBNAME: MongoDB database name
