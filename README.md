@@ -10,7 +10,8 @@ This project is a simple harbour control application to track ships. It consists
 
 ### Prerequisites
 
-- Node.js version 8 or later
+- Node.js version 8 for the Frontend
+- Node.js version 12 or later for the backend
 - Docker and Docker Compose
 - MongoDB
 
