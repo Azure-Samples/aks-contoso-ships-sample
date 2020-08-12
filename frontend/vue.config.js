@@ -7,5 +7,22 @@ module.exports = {
       poll: 1000,
       aggregateTimeout: 300
     }
+  },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /config.*config\.js$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'config.js'
+              },
+            }
+          ]
+        }
+      ]
+    }
   }
 }
