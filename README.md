@@ -1,37 +1,47 @@
-# AKS Bootcamp - Demo Application
+# AKS Bootcamp - Aplicação de exemplo
 
-This is a short sample code for the AKS Bootcamp
+> Esta é a aplicação de exemplo para o [AKS Bootcamp](https://channel9.msdn.com/Series/AKS-Bootcamp-From-zero-to-container-hero?WT.mc_id=containers-9948-ludossan)
 
-## Features
+## Funcionalidades
 
-This project is a simple harbour control application to track ships. It consists on a front-end and a back-end part.
+Este projeto é uma aplicação simples de controle de portos e navios. Consiste em uma parte front-end e outra back-end
 
-## Getting Started
+## Começar
 
-### Prerequisites
+### Pré Requisitos
 
-- Node.js version 8 for the Frontend
-- Node.js version 12 or later for the backend
-- Docker and Docker Compose
+- Node.js versão 8 para o front-end
+- Node.js versão 12 ou superior para o back-end
+- Docker e Docker Compose
 - MongoDB
 
-### Installation & Quickstart
+### Instalação e Início rápido
 
-#### Running with Docker
+#### Rodando com Docker
 
-Just type `docker-compose up` on the project root and it should start a working application.
+Só digite `docker-compose up` na raiz do projeto e a aplicação deverá ser executada.
 
-#### Running stand alone
+#### Executando em modo stand alone
 
-The application is divided into two main directories: `frontend` and `backend` each one with their respective codes and infrastructure files.
+A aplicação é dividida em dois diretórios principais: `frontend` e` backend` cada um com seus respectivos códigos e arquivos de infraestrutura.
 
-__Front End__: Created using Vim. Just go into the directory, type `npm install` to install all dependencies and then `npm run serve`. You can also build the image from the Dockerfile in the same directory
+__Front End__: Criado usando Vue. Basta ir ao diretório, digitar `npm install` para instalar todas as dependências e então` npm run serve`. Você também pode construir a imagem do Dockerfile no mesmo diretório
 
-__Front End__: Created with TypeScript. Just go into the directory, type `npm install` to install all dependencies and then `npm run build:start` to run the app or `npm run start:debug` to start in debug mode (tsc watch and logging). You can also build the image from the Dockerfile in the same directory
+__Front End__: Criado com TypeScript. Apenas vá para o diretório, digite `npm install` para instalar todas as dependências e então `npm run build: start` para executar o aplicativo ou `npm run start:debug` para iniciar no modo de depuração. Você também pode construir a imagem do Dockerfile no mesmo diretório
 
-### Environment Variables
+#### Kubernetes
 
-The backend portion requires environment variables to run, those are:
+Você pode executar todos os arquivos Kubernetes no diretório [kubernetes](./kubernetes) usando kubectl para criar os workloads em um cluster Kubernetes. Você também pode usar o [Helm](https://helm.sh) para executar os charts no diretório [charts](./charts).
 
-- DATABASE_MONGODB_URI: URI of the MongoDB database
-- DATABASE_MONGODB_DBNAME: MongoDB database name
+### MongoDB
+
+Este aplicativo precisa de um banco de dados MongoDB para funcionar. Você pode criar ou hospedar qualquer banco de dados e conectar com a string de conexão.
+
+Use os arquivos `values.yml` presentes em ambos os charts no diretório de `charts` para descobrir as variáveis que precisam ser substituídas. Se você estiver usando os arquivos de manifesto do Kubernetes, substitua a string de conexão apenas no __backend__.
+
+### Variáveis de ambiente
+
+O backend precisa de variáveis de ambiente para ser executado
+
+- DATABASE_MONGODB_URI: URI do banco de dados
+- DATABASE_MONGODB_DBNAME: Nome do banco de dados
