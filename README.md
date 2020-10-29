@@ -17,10 +17,6 @@ This project is a simple harbor control application to track ships. It consists 
 
 ### Installation & Quickstart
 
-#### Running with Docker
-
-Just type `docker-compose up` on the project root and it should start a working application.
-
 #### Running stand alone
 
 The application is divided into two main directories: `frontend` and `backend` each one with their respective codes and infrastructure files.
