@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  porto-backend:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-08-25T16:40:06.94521-03:00"
+    description: Backend da aplicação de controle de navios
+    digest: 3ddf4f9675a1d8cda9db49ef58e1f5cd063245ba3f2274db7f5861fb8ddcedaf
+    name: porto-backend
+    type: application
+    urls:
+    - https://azure-samples.github.io/aks-bootcamp-sample/charts/porto-backend-0.1.0.tgz
+    version: 0.1.0
+  porto-frontend:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2020-08-25T16:40:06.973923-03:00"
+    description: Front end da aplicação de controle de portos
+    digest: 9194c64d682b9637143604e48e4346c7ac2cfaf888c8159088face4a0f655191
+    name: porto-frontend
+    type: application
+    urls:
+    - https://azure-samples.github.io/aks-bootcamp-sample/charts/porto-frontend-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-08-25T16:40:06.936128-03:00"

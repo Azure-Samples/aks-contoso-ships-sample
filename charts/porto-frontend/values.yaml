@@ -1,0 +1,32 @@
+name: porto-frontend
+image:
+  tag: v1.0.0
+  name: porto_frontend
+  registry: maratonaaks.azurecr.io
+appPort: 80
+
+deployment:
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+
+ingress:
+  hostName: porto-frontend.yourdns-zone.aksapp.io
+
+service:
+  port:
+
+configMap:
+  name: frontend-config
+  backendUrl: http://porto-backend.yourdns-zone.aksapp.io
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 8
+  CPUUtilization: 20
+  memoryUtilization: 35

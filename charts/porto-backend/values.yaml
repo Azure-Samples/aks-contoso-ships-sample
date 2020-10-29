@@ -1,0 +1,34 @@
+name: porto-backend
+image:
+  tag: v1.0.0
+  name: porto_backend
+  registry: maratonaaks.azurecr.io
+appPort: 3000
+
+deployment:
+  envs:
+    dbName: ship_manager
+  replicaCount: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+
+ingress:
+  hostName: porto-backend.yourdns-zone.aksapp.io
+
+service:
+  port:
+
+secret:
+  name:
+  mongodb_uri: mongodb+srv://someconnstringhere
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 8
+  CPUUtilization: 20
+  memoryUtilization: 35
