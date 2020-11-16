@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ default "frontend-config" .Values.configMap.name }}
-data:
-  config.js: |
-    {{ tpl "const config = (() => ({ 'VUE_APP_BACKEND_BASE_URL': '{{ .Values.configMap.backendUrl }}' }))()" . }}
