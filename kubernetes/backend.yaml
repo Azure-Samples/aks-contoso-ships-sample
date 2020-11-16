@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: porto-backend
+  name: ship-manager-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: porto-backend
+      app: ship-manager-backend
   template:
     metadata:
       labels:
-        app: porto-backend
+        app: ship-manager-backend
     spec:
       containers:
-        - image: maratonaaks.azurecr.io/porto_backend:v1.0.0
-          name: porto-backend
+        - image: mcr.microsoft.com/mslearn/samples/contoso-ship-manager:backend
+          name: ship-manager-backend
           resources:
             requests:
               cpu: 100m
@@ -37,10 +37,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: porto-backend
+  name: ship-manager-backend
 spec:
   selector:
-    app: porto-backend
+    app: ship-manager-backend
   ports:
     - name: http
       port: 80
@@ -49,17 +49,17 @@ spec:
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: porto-backend
+  name: ship-manager-backend
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-    - host: porto-backend.yourdns-zone.aksapp.io
+    - host: ship-manager-backend.DNS_ZONE
       http:
         paths:
           - path: /
             backend:
-              serviceName: porto-backend
+              serviceName: ship-manager-backend
               servicePort: http
 ---
 apiVersion: v1
@@ -73,14 +73,14 @@ stringData:
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: porto-backend
+  name: ship-manager-backend
 spec:
   maxReplicas: 8
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: porto-backend
+    name: ship-manager-backend
   metrics:
     - type: Resource
       resource:
