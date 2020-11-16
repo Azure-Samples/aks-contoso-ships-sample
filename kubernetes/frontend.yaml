@@ -70,7 +70,7 @@ data:
   config.js: |
     const config = (() => {
       return {
-        'VUE_APP_BACKEND_BASE_URL': 'http://porto-backend.yourdns-zone.aksapp.io',
+        'VUE_APP_BACKEND_BASE_URL': 'http://ship-manager-backend.yourdns-zone.aksapp.io',
       }
     })()
 ---
