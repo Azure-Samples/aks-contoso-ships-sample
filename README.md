@@ -1,6 +1,6 @@
 # Contoso Ship Manager - Demo Application
 
-This is a short sample code for the **"Managing Application State with AKS and CosmosDB"** learn module
+> This is a short sample code for Microsoft Learn
 
 ## Features
 
