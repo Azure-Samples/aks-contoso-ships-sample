@@ -25,6 +25,12 @@ __Front End__: Created using Vim. Just go into the directory, type `npm install`
 
 __Front End__: Created with TypeScript. Just go into the directory, type `npm install` to install all dependencies and then `npm run build:start` to run the app or `npm run start:debug` to start in debug mode (tsc watch and logging). You can also build the image from the Dockerfile in the same directory
 
+#### Application hosted image
+
+There's a hosted image of this application available at the MCR (Microsoft Container Registry) in the following address: `mcr.microsoft.com/mslearn/samples/contoso-ship-manager`
+
+You can pull this image using `docker pull` and run it locally using `docker run`.
+
 ### Environment Variables
 
 The backend portion requires environment variables to run, those are:
