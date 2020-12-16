@@ -31,6 +31,13 @@ There's a hosted image of this application available at the MCR (Microsoft Conta
 
 You can pull this image using `docker pull` and run it locally using `docker run`.
 
+There are two tags available for different parts of the image:
+
+- `backend`: Has only the backend of the application.
+- `frontend`: Contains the frontend part of the application.
+
+__You'll still need a MongoDB database to run those images__
+
 ### Environment Variables
 
 The backend portion requires environment variables to run, those are:
